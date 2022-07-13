@@ -1,16 +1,20 @@
 import React, { Component } from 'react';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+
+import Home from './pages/home/home';
+import Login from './pages/login/login';
+import About from './pages/about/about';
 
 class App extends Component {
   render() {
     return (
-      <div className='App'>
-        <div className='App-header'>
-          <h2>Welcome to React</h2>
-        </div>
-        <p className='App-intro'>
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
-      </div>
+      <BrowserRouter>
+        <Routes>
+          <Route path='login' element={<Login />} />
+          <Route path='/' element={<Home />} />
+          <Route path='about' element={<About />} />
+        </Routes>
+      </BrowserRouter>
     );
   }
 }
