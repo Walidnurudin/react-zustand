@@ -6,6 +6,7 @@ const useUser = create(
     persist(
       (set) => ({
         user: {},
+        token: 'INI TOKEN',
         isLogin: false,
 
         setUser: (data) => set(() => ({ user: data })),
